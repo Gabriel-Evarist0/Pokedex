@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 noje.js - baixamos
 baixamos a biblioteca http-server
 pra usar a biblioteca, no terminal coloca http-server caminho pasta do arquivo
@@ -5,4 +6,13 @@ vantagem é poder testar em multiplos dispositivos locais
 
 
 
+=======
+noje.js - baixamos
+baixamos a biblioteca http-server
+pra usar a biblioteca, no terminal coloca http-server caminho pasta do arquivo
+vantagem é poder testar em multiplos dispositivos locais
+
+
+
+>>>>>>> 8f8ca24146f377237caa3f0304ee780e1a741231
 display: flex - flex-direction: row (do lado do outro) / flex-direction: column (abaixo do outro)
