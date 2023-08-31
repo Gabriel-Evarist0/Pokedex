@@ -4,4 +4,14 @@ class Pokemon{
     mainType;
     types = [];
     photo;
+    shinyPhoto;
+    baseStatus = {
+        baseHP: 0,
+        baseATK: 0,
+        baseDEF: 0,
+        baseSPD: 0,
+        baseSPA: 0,
+        baseSpeed: 0
+    }
+    
 }
