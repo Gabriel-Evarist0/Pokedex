@@ -7,9 +7,10 @@ function convertPokeApiDetailToPokemon(pokeDetail){
 
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
-
+    const typesUrl = pokeDetail.types.map((typeC) => typeC.type.url)
     pokemon.types = types
     pokemon.mainType = type
+    pokemon.typeChartUrl = typesUrl
     pokemon.photo = pokeDetail.sprites.other['official-artwork'].front_default
     pokemon.shinyPhoto = pokeDetail.sprites.other['official-artwork'].front_shiny
     pokemon.baseStatus.baseHP = pokeDetail.stats[0].base_stat
@@ -40,6 +41,13 @@ pokeApi.getPokemons = (offset = 0, limit = 8) => {
         .then((pokemon) => pokemon.map(pokeApi.getPokemonDetail))
         .then((detailRequest) => Promise.all(detailRequest))
         .then((pokemonDetails) => pokemonDetails)
+}
+
+pokeApi.getTypeChart = (url) =>{
+    fetch(url)
+        .then((response) => response.json())
+        .then(console.log())
+
 }
 
 

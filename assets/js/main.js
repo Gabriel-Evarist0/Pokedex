@@ -12,7 +12,6 @@ function loadPokemonItens(offset, limit) {
     //debbuger (pra debugar no browser)
     
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
-        
         const newHtml = pokemons.map((pokemon) => 
         `
             <li class="pokemon ${pokemon.mainType}" onclick = openPopup("${pokemon.name}")>
@@ -53,10 +52,8 @@ function openPopup(pokemon){
     const content = document.getElementById("content")
     popup.style.display = "block"
     content.setAttribute("style", "filter:brightness(0.5);")
-
     pokeApi.getPokemonInfo(pokemon)
         .then((response) => {
-            console.log(response)
             const infoHtml = `
             <i class="gg-close" onclick="closePopup()"></i>
             <h1>${response.name}</h1>
@@ -106,7 +103,6 @@ function openPopup(pokemon){
                         <p class="progress-label">MAX ${maxStats(response.baseStatus.baseSpeed)}</p>
                     </div>
                 </div>
-                <div class = "local">Localization</div>
             </div>
             `;
            popup.innerHTML = infoHtml

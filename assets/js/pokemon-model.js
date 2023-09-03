@@ -13,5 +13,9 @@ class Pokemon{
         baseSPA: 0,
         baseSpeed: 0
     }
+    typeChartUrl = {
+        url1: "",
+        url2: ""
+    };
     
 }
