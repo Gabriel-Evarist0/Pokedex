@@ -29,12 +29,12 @@
     background: turquoise;
   }
   
-  .progress-element--html .progress-container::before {
-    animation: progress-html 1s ease-in forwards;
+  .progress-element--hp .progress-container::before {
+    animation: progress-hp 1s ease-in forwards;
   }
   
-  .progress-element--css .progress-container::before {
-    animation: progress-css 1s ease-in forwards;
+  .progress-element--atk .progress-container::before {
+    animation: progress-atk 1s ease-in forwards;
   }
   
   .progress-element--javascript .progress-container::before {
@@ -54,12 +54,12 @@
   
 
   
-  .progress-element--html .progress-label::after {
-    animation: progress-text-html 1s ease-in forwards;
+  .progress-element--hp .progress-label::after {
+    animation: progress-text-hp 1s ease-in forwards;
   }
   
-  .progress-element--css .progress-label::after {
-    animation: progress-text-css 1s ease-in forwards;
+  .progress-element--atk .progress-label::after {
+    animation: progress-text-atk 1s ease-in forwards;
   }
   
   .progress-element--javascript .progress-label::after {
@@ -67,19 +67,36 @@
   }
   
   :root{
-    --base-stats: 50;
+    --base-stats: 10;
     --max-stats: 100;
-    --percent-stats: calc((var(--base-stats) / var(--max-stats)) * 100);
+    --base-HP: 0;
+    --max-HP: 0;
+    --percent-HP: calc((var(--base-HP) / var(--max-HP)) * 100);
+    --base-ATK: 0;
+    --max-ATK: 0;
+    --percent-ATK: calc((var(--base-ATK) / var(--max-ATK)) * 100);
+    --base-DEF: 0;
+    --max-DEF: 0;
+    --percent-DEF: calc((var(--base-DEF) / var(--max-DEF)) * 100);
+   /* --base-SPATK: 0;
+    --max-SPATK: 0;
+    --percent-SPATK: calc((var(--base-SPATK) / var(--max-SPATK)) * 100);
+    --base-SPDEF: 0;
+    --max-SPDEF: 0;
+    --percent-SPDEF: calc((var(--base-SPDEF) / var(--max-SPDEF)) * 100);
+    --base-Speed: 0;
+    --max-Speed: 0;
+    --percent-Speed: calc((var(--base-Speed) / var(--max-Speed)) * 100);*/
   }
 
 
-  @keyframes progress-html {
+  @keyframes progress-hp {
     to {
-        width: calc(var(--base-stats) * 1%);
+        width: calc(var(--percent-HP) * 1%);
     }
   }
   
-  @keyframes progress-css {
+  @keyframes progress-atk {
     to {
         width: calc(var(--base-stats) * 1%);
     }

@@ -47,10 +47,12 @@ loadButton.addEventListener("click", () => {
     }
 })
 
+
 function openPopup(pokemon){
     const popup = document.getElementById("teste")
     const content = document.getElementById("content")
-    popup.style.display = "block"
+    var r = document.querySelector(':root');
+    $("#teste").fadeIn("fast")
     content.setAttribute("style", "filter:brightness(0.5);")
     pokeApi.getPokemonInfo(pokemon)
         .then((response) => {
@@ -60,7 +62,7 @@ function openPopup(pokemon){
             <div><img src="${response.photo}" alt="${response.name}"></div>
             <div class = "info">
                 <div class = "stats">
-                    <div class="progress-element progress-element--html" style = "display: inline-flex;">
+                    <div class="progress-element progress-element--hp" style = "display: inline-flex;">
                         <p class="progress-label">HP<br>${response.baseStatus.baseHP}</p>
                         <div class="progress-container">
                         <progress max="${maxHP(response.baseStatus.baseHP)}" value="${response.baseStatus.baseHP}">95%</progress>
@@ -105,16 +107,23 @@ function openPopup(pokemon){
                 </div>
             </div>
             `;
-           popup.innerHTML = infoHtml
+            var rs = getComputedStyle(r);
+            
+            r.style.setProperty('--base-HP', response.baseStatus.baseHP);
+            r.style.setProperty('--max-HP', maxHP(response.baseStatus.baseHP));
+            r.style.setProperty("--base-ATK", response.baseStatus.baseATK);
+            r.style.setProperty('--max-ATK', maxHP(response.baseStatus.baseATK));
+            popup.innerHTML = infoHtml
         })
 
 }
 
 function closePopup(){
     const popup = document.getElementById("teste")
-    popup.style.display = "none"
+    $("#teste").fadeOut("fast")
     content.setAttribute("style", "filter:brightness(1);")
     popup.innerHTML = ""
+
 }
 
 function maxHP (hpValue){

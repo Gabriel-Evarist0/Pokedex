@@ -61,7 +61,7 @@ body{
 .stats{
     border: 1px solid black;
     display: grid;
-    justify-content: left;
+    justify-content: center;
     padding: 5px 10px;
     font-size: 15px;
     width: 335px;
@@ -95,7 +95,7 @@ body{
     .popup {
         background-color: white;
         width: 44vw;
-        height: 60vh;
+        height: 60KOKOvh;
         display: none;
         top: 50%;
         left: 50%;
@@ -117,9 +117,9 @@ body{
 @media screen and (min-width: 992px){
     .popup{
         width: 40vw;
-        margin-top: -30vh;
+        margin-top: -36vh;
         margin-left: -18vw;
-        height: 70vh;
+        height: 75vh;
     }
     .popup img{
         width: 30%;
